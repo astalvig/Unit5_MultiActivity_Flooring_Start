@@ -4,5 +4,9 @@
     <string name="app_name">Unit5_MultiActivity_Flooring_Start</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="room_width">Room Width</string>
+    <string name="room_length">Room Length</string>
+    <string name="show_results">Show Results</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
 
 </resources>

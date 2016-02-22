@@ -1,12 +1,16 @@
 package edu.css.cis3334.unit5_multiactivity_flooring_start;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+    public final static String EXTRA_MESSAGE = "edu.css.cis3334.unit5_multiactivity_flooring_start.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +39,19 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick (View view){
+        //do something when button clicked
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        EditText editTextW = (EditText) findViewById(R.id.etWidth);
+        EditText editTextL = (EditText) findViewById(R.id.etLength);
+        int width = Integer.parseInt(editTextW.getText().toString());
+        int length = Integer.parseInt(editTextL.getText().toString());
+        String message = "Flooring Needed: \n" + "The width = " + editTextW.getText().toString() +
+                "\nThe length = " + editTextL.getText().toString() +
+                "\nThe total flooring required = " + width * length;
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
